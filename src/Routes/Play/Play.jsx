@@ -1,13 +1,14 @@
 import Fist from "../../components/Fist/Fist";
 import classes from "./Play.module.scss";
 import Playground from "../../Layout/Playground/Playground";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Navigate, useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 
 const Play = ({ fists, playerPick, increaseScore, decreaseScore }) => {
     // const playerPickNavigate = useLocation().state;
 
     const navigate = useNavigate();
+    // navigate('/')
 
     const [result, setResult] = useState("");
 
@@ -19,7 +20,9 @@ const Play = ({ fists, playerPick, increaseScore, decreaseScore }) => {
     const mount = useRef(true);
     useEffect(() => {
         if (mount.current) mount.current = false;
-        else getResult();
+        else {
+            getResult();
+        }
     }, [computerPick]);
 
     const mount1 = useRef(true);
@@ -63,7 +66,9 @@ const Play = ({ fists, playerPick, increaseScore, decreaseScore }) => {
         }
     };
 
-    return (
+    return !playerPick ? (
+        <Navigate to="/" />
+    ) : (
         <Playground>
             <Fist type={playerPick} playerPick win={result === "win" && true} />
             <Fist
