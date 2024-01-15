@@ -1,0 +1,26 @@
+.container {
+    // border: solid yellow;
+    // & > * {border: solid tan;}
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    background: linear-gradient(#fff, #fafafa);
+    color: var(--darkText);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    opacity: 1;
+    transition: opacity 0.4s ease-in ;
+
+    .closeButton {
+        background-color: transparent;
+        border: none;
+    }
+
+    &.close {
+        opacity: 0;
+        z-index: -1;
+        transition: all 0.8s;
+    }
+}
