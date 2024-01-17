@@ -11,7 +11,7 @@ const Pick = ({fists, pickHandler}) => {
             {fists.map((fist) => (
                 <Fist key={fist.id} type={fist.type} pickHandler={pickHandler} />
             ))}
-            <img style={{width: '100%'}} src={triangle} alt="" />
+            <img style={{width: '100%', height: '100%'}} src={triangle} alt="" />
         </Playground>
     );
 };

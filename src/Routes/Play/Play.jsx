@@ -69,7 +69,7 @@ const Play = ({ fists, playerPick, increaseScore, decreaseScore }) => {
     return !playerPick ? (
         <Navigate to="/" />
     ) : (
-        <Playground>
+        <Playground play>
             <Fist type={playerPick} playerPick win={result === "win" && true} />
             <Fist
                 type={computerPick}
@@ -80,22 +80,22 @@ const Play = ({ fists, playerPick, increaseScore, decreaseScore }) => {
                 <p>you picked</p>
                 <p>the house picked</p>
             </div>
-            <div className={classes.result}>
-                {result && (
-                    <>
-                        <p>
-                            {result === "win" || result === "lose"
-                                ? `you ${result}`
-                                : result}
-                        </p>
-                        <button
-                            className={classes.playAgain}
-                            onClick={() => navigate("/")}
-                        >
-                            play again
-                        </button>
-                    </>
-                )}
+            <div className={[classes.result, result && classes.show].join(" ")}>
+                {/* {result && ( */}
+                {/* <> */}
+                <p>
+                    {result === "win" || result === "lose"
+                        ? `you ${result}`
+                        : result}
+                </p>
+                <button
+                    className={classes.playAgain}
+                    onClick={() => navigate("/")}
+                >
+                    play again
+                </button>
+                {/* </> */}
+                {/* )} */}
             </div>
         </Playground>
     );

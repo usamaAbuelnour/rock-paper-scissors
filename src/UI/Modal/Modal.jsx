@@ -9,11 +9,19 @@ const Modal = ({ modalIsVisible, closeModal }) => {
                 !modalIsVisible && classes.close,
             ].join(" ")}
         >
-            <h1>rules</h1>
+            <div className={classes.header}>
+                <h1>rules</h1>
+                <button className={[classes.closeButton, classes.hideOnSmall].join(" ")} onClick={closeModal}>
+                    <IconClose />
+                </button>
+            </div>
             <div className={classes.rulesImg}>
                 <img src={rules} alt="" />
             </div>
-            <button className={classes.closeButton} onClick={closeModal}>
+            <button
+                className={[classes.closeButton, classes.hideOnLarge].join(" ")}
+                onClick={closeModal}
+            >
                 <IconClose />
             </button>
         </div>

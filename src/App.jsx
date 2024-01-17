@@ -37,6 +37,7 @@ function App() {
         }
     }, [playerPick]);
 
+
     const increaseScore = () => setScore((prev) => ++prev);
     const decreaseScore = () => score > 0 && setScore((prev) => --prev);
 
