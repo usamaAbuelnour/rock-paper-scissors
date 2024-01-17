@@ -1,5 +1,5 @@
 .container {
-    // border: solid 1px cyan;
+    border: solid 1px cyan;
     height: 50%;
     display: flex;
     justify-content: center;
@@ -17,14 +17,20 @@
         & > * {
             // border: solid wheat;
         }
-        // border: solid green;
+        border: solid green;
         position: relative;
-        width: 90%;
-        height: 100%;
         display: flex;
         flex-direction: column;
         // justify-content: center;
         // align-items: center;
+        @media (min-width: 600px) {
+            height: 100%;
+            
+        }
+        @media (max-width: 767px) {
+            width: 70%;
+            
+        }
         @media (min-width: 1200px) {
             // height: 70%;
         }
